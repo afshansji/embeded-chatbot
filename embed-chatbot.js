@@ -1,4 +1,5 @@
 (function () {
+    // Create the container for the chatbot and assistant
     const container = document.createElement("div");
     container.innerHTML = `
         <div id="assistant-embed-container">
@@ -24,12 +25,27 @@
           }
         </style>
     `;
+
+    // Append the container to the body
     document.body.appendChild(container);
 
+    // Extract the assistant ID from the script URL query parameter
+    const assistantId = new URLSearchParams(window.location.search).get('assistant_id');
+
+    if (assistantId) {
+        // Set the iframe's src to dynamically load the assistant based on the assistant_id
+        document.getElementById("chatbot-iframe").src = `https://tutorgpt.managedcoder.com/assistants/${assistantId}`;
+    } else {
+        console.error("No assistant ID provided.");
+    }
+
+    // Chatbot icon click event to open the assistant
     document.getElementById("chatbot-icon").onclick = function () {
         document.getElementById("assistant-embed").style.display = "block";
         document.getElementById("chatbot-icon").style.display = "none";
     };
+
+    // Minimize button click event to close the assistant
     document.getElementById("minimize-button").onclick = function () {
         document.getElementById("assistant-embed").style.display = "none";
         document.getElementById("chatbot-icon").style.display = "flex";
