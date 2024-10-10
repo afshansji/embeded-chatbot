@@ -6,7 +6,7 @@
             <div id="chatbot-icon" style="position:fixed;bottom:40px;right:70px;width:170px;height:170px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 8px rgba(0,0,0,0.1);animation:bounce 2s infinite;">
               <img src="https://raw.githubusercontent.com/afshansji/embeded-chatbot/main/195-removebg-preview.png" alt="Chatbot" style="width:170px;height:170px;object-fit:cover;" />
             </div>
-            <div id="assistant-embed" style="position:fixed;bottom:20px;right:20px;width:750px;height:530px;border:1px solid #ccc;border-radius:10px;background:#fff;box-shadow:0 4px 8px rgba(0,0,0,0.1);display:none;">
+            <div id="assistant-embed" style="position:fixed;bottom:20px;right:20px;width:750px;height:530px;border:1px solid #ccc;border-radius:10px;display:none;">
               <div style="display:flex;justify-content:space-between;align-items:center;padding:10px;background-color:#f0f0f0;border-top-left-radius:10px;border-top-right-radius:10px;">
                 <h4 style="margin:0;font-size:16px;">TutorGPT Assistant</h4>
                 <button id="minimize-button" style="border:none;background:transparent;cursor:pointer;font-size:20px;">
