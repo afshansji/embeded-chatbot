@@ -1,5 +1,8 @@
 (function () {
     // Create the container for the chatbot and assistant
+    const scriptTag = document.currentScript || document.querySelector('script[data-assistant-name][data-assistant-id]');
+    const assistantName = scriptTag.getAttribute('data-assistant-name');
+    const assistantId = scriptTag.getAttribute('data-assistant-id');
     const container = document.createElement("div");
     container.innerHTML = `
         <div id="assistant-embed-container">
@@ -8,7 +11,7 @@
 </div>
             <div id="assistant-embed" style="position:fixed;bottom:20px;right:20px;width:750px;height:530px;border:1px solid #ccc;border-radius:10px;display:none;">
               <div style="display:flex;justify-content:space-between;align-items:center;padding:10px;background-color:#f0f0f0;border-top-left-radius:10px;border-top-right-radius:10px;">
-                <h4 style="margin:0;font-size:16px;">TutorGPT Assistant</h4>
+                <h4 style="margin:0;font-size:16px;">${assistantName} Assistant</h4>
                 <button id="minimize-button" style="border:none;background:transparent;cursor:pointer;font-size:20px;">
                   <i class="fas fa-chevron-down" style="color:#ff4d4f;"></i>
                 </button>
@@ -48,14 +51,11 @@
     // Append the container to the body
     document.body.appendChild(container);
 
-    // Extract the assistant ID from the script URL query parameter
-    const assistantId = new URLSearchParams(window.location.search).get('assistant_id');
-
-    if (assistantId) {
-        // Set the iframe's src to dynamically load the assistant based on the assistant_id
-        document.getElementById("chatbot-iframe").src = `https://tutorgpt.managedcoder.com/assistants/${assistantId}`;
+    if (assistantName && assistantId) {
+        // Set the iframe's src to dynamically load the assistant based on the assistant_name and assistant_id
+        document.getElementById("chatbot-iframe").src = `https://tutorgpt.managedcoder.com/assistants/${assistantName}/${assistantId}`;
     } else {
-        console.error("No assistant ID provided.");
+        console.error("Assistant name or ID not provided.");
     }
 
     // Chatbot icon click event to open the assistant
