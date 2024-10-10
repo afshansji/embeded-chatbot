@@ -3,8 +3,8 @@
     const container = document.createElement("div");
     container.innerHTML = `
         <div id="assistant-embed-container">
-            <div id="chatbot-icon" style="position:fixed;bottom:40px;right:70px;width:100px;height:100px;background-color:#008cba;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 8px rgba(0,0,0,0.1);animation:bounce 2s infinite;">
-              <img src="https://img.freepik.com/free-vector/cute-bot-say-users-hello-chatbot-greets-online-consultation_80328-195.jpg" alt="Chatbot" style="width:80px;height:80px;border-radius:50%;object-fit:cover;" />
+            <div id="chatbot-icon" style="position:fixed;bottom:40px;right:70px;width:150px;height:150px;background-color:#008cba;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 8px rgba(0,0,0,0.1);animation:bounce 2s infinite;">
+              <img src="https://img.freepik.com/free-vector/cute-bot-say-users-hello-chatbot-greets-online-consultation_80328-195.jpg" alt="Chatbot" style="width:130px;height:130px;object-fit:cover;" />
             </div>
             <div id="assistant-embed" style="position:fixed;bottom:20px;right:20px;width:750px;height:530px;border:1px solid #ccc;border-radius:10px;background:#fff;box-shadow:0 4px 8px rgba(0,0,0,0.1);display:none;">
               <div style="display:flex;justify-content:space-between;align-items:center;padding:10px;background-color:#f0f0f0;border-top-left-radius:10px;border-top-right-radius:10px;">
@@ -31,15 +31,16 @@
           }
           
           #chatbot-icon {
-            width: 100px;
-            height: 100px;
+            width: 150px;
+            height: 150px;
+            background-color: #008cba;
           }
 
           #chatbot-icon img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
+            width: 130px;
+            height: 130px;
             object-fit: cover;
+            border-radius: 0; /* No border radius */
           }
 
         </style>
