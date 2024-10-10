@@ -1,4 +1,8 @@
 (function () {
+    // Find the current script tag and extract the data-assistant-id attribute
+    const scriptTag = document.currentScript || document.querySelector('script[data-assistant-id]');
+    const assistantId = scriptTag.getAttribute('data-assistant-id');
+
     // Create the container for the chatbot and assistant
     const container = document.createElement("div");
     container.innerHTML = `
@@ -29,11 +33,8 @@
     // Append the container to the body
     document.body.appendChild(container);
 
-    // Extract the assistant ID from the script URL query parameter
-    const assistantId = new URLSearchParams(window.location.search).get('assistant_id');
-
+    // Set the iframe's src to dynamically load the assistant based on the assistant_id
     if (assistantId) {
-        // Set the iframe's src to dynamically load the assistant based on the assistant_id
         document.getElementById("chatbot-iframe").src = `https://tutorgpt.managedcoder.com/assistants/${assistantId}`;
     } else {
         console.error("No assistant ID provided.");
