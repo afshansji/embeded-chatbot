@@ -4,12 +4,14 @@
     const assistantName = scriptTag.getAttribute('data-assistant-name');
     const assistantId = scriptTag.getAttribute('data-assistant-id');
     const container = document.createElement("div");
-    container.innerHTML = 
+
+    // Use template literals for the innerHTML to include variables
+    container.innerHTML = `
         <div id="assistant-embed-container">
            <div id="chatbot-icon" style="position:fixed;bottom:40px;right:70px;width:200px;height:200px;display:flex;align-items:center;justify-content:center;cursor:pointer;animation:bounce 2s infinite;">
-    <img src="https://raw.githubusercontent.com/afshansji/embeded-chatbot/main/195-removebg-preview.png" alt="Chatbot" style="width:200px;height:200px;object-fit:cover;" />
-</div>
-            <div id="assistant-embed" style="position:fixed;bottom:20px;right:20px;width:750px;height:530px;border:1px solid #ccc;border-radius:10px;display:none;">
+              <img src="https://raw.githubusercontent.com/afshansji/embeded-chatbot/main/195-removebg-preview.png" alt="Chatbot" style="width:200px;height:200px;object-fit:cover;" />
+           </div>
+           <div id="assistant-embed" style="position:fixed;bottom:20px;right:20px;width:750px;height:530px;border:1px solid #ccc;border-radius:10px;display:none;">
               <div style="display:flex;justify-content:space-between;align-items:center;padding:10px;background-color:#f0f0f0;border-top-left-radius:10px;border-top-right-radius:10px;">
                 <h4 style="margin:0;font-size:16px;">${assistantName} Assistant</h4>
                 <button id="minimize-button" style="border:none;background:transparent;cursor:pointer;font-size:20px;">
@@ -44,16 +46,15 @@
             object-fit: cover;
             border-radius: 0; /* No border radius */
           }
-
         </style>
-    ;
+    `;
 
     // Append the container to the body
     document.body.appendChild(container);
 
     if (assistantName && assistantId) {
         // Set the iframe's src to dynamically load the assistant based on the assistant_name and assistant_id
-        document.getElementById("chatbot-iframe").src = https://tutorgpt.managedcoder.com/assistants/${assistantName}/${assistantId};
+        document.getElementById("chatbot-iframe").src = `https://tutorgpt.managedcoder.com/assistants/${assistantName}/${assistantId}`;
     } else {
         console.error("Assistant name or ID not provided.");
     }
