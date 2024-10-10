@@ -37,7 +37,7 @@
     // Check if both assistantName and assistantId are provided
     if (assistantName && assistantId) {
         // Set the iframe's src to dynamically load the assistant based on the assistant_name and assistant_id
-        document.getElementById("chatbot-iframe").src = `https://tutorgpt.managedcoder.com/${assistantName}/${assistantId}`;
+        document.getElementById("chatbot-iframe").src = `https://tutorgpt.managedcoder.com/assistants/${assistantName}/${assistantId}`;
     } else {
         console.error("Assistant name or ID not provided.");
     }
