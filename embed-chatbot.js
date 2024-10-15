@@ -1,11 +1,8 @@
 (function () {
-    // Create the container for the chatbot and assistant
     const scriptTag = document.currentScript || document.querySelector('script[data-assistant-name][data-assistant-id]');
     const assistantName = scriptTag.getAttribute('data-assistant-name');
     const assistantId = scriptTag.getAttribute('data-assistant-id');
     const container = document.createElement("div");
-
-    // Use template literals for the innerHTML to include variables
     container.innerHTML = `
         <div id="assistant-embed-container">
            <div id="chatbot-icon" style="position:fixed;bottom:40px;right:70px;width:200px;height:200px;display:flex;align-items:center;justify-content:center;cursor:pointer;animation:bounce 2s infinite;">
@@ -48,24 +45,18 @@
           }
         </style>
     `;
-
-    // Append the container to the body
     document.body.appendChild(container);
 
     if (assistantName && assistantId) {
-        // Set the iframe's src to dynamically load the assistant based on the assistant_name and assistant_id
+
         document.getElementById("chatbot-iframe").src = `https://tutorgpt.managedcoder.com/assistants/${assistantName}/${assistantId}`;
     } else {
         console.error("Assistant name or ID not provided.");
     }
-
-    // Chatbot icon click event to open the assistant
     document.getElementById("chatbot-icon").onclick = function () {
         document.getElementById("assistant-embed").style.display = "block";
         document.getElementById("chatbot-icon").style.display = "none";
     };
-
-    // Minimize button click event to close the assistant
     document.getElementById("minimize-button").onclick = function () {
         document.getElementById("assistant-embed").style.display = "none";
         document.getElementById("chatbot-icon").style.display = "flex";
