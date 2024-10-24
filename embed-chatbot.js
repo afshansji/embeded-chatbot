@@ -8,7 +8,7 @@
           <div id="chatbot-icon" style="position:fixed;bottom:40px;right:50px;width:120px;height:120px;display:flex;align-items:center;justify-content:center;cursor:pointer;animation:bounce 2s infinite;">
     <img src="https://github.com/afshansji/embeded-chatbot/blob/main/Bot%201.png?raw=true" alt="Chatbot" style="width:150px;height:120px;object-fit:cover;" />
 </div>
-           <div id="assistant-embed" style="position:fixed;bottom:20px;right:20px;width:350px;height:420px;border:1px solid #ccc;border-radius:10px;display:none;">
+           <div id="assistant-embed" style="position:fixed;bottom:20px;right:20px;width:450px;height:520px;border:1px solid #ccc;border-radius:10px;display:none;">
               <div style="display:flex;justify-content:space-between;align-items:center;padding:10px;background-color:#f0f0f0;border-top-left-radius:10px;border-top-right-radius:10px;">
                 <h4 style="margin:0;font-size:16px;">${assistantName} Assistant</h4>
                 <button id="minimize-button" style="border:none;background:transparent;cursor:pointer;font-size:20px;">
