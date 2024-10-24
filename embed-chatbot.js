@@ -50,7 +50,9 @@
 
     if (assistantName && assistantId) {
 
-        document.getElementById("chatbot-iframe").src = `https://tutorgpt.managedcoder.com/assistants/${assistantName}/${assistantId}`;
+        // document.getElementById("chatbot-iframe").src = `https://tutorgpt.managedcoder.com/assistants/${assistantName}/${assistantId}`;
+        document.getElementById("chatbot-iframe").src = `http://localhost:3000/assistants//${assistantName}/${assistantId}`;
+        
     } else {
         console.error("Assistant name or ID not provided.");
     }
