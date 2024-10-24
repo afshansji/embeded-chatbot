@@ -9,7 +9,7 @@
     <img src="https://github.com/afshansji/embeded-chatbot/blob/main/Bot%201.png?raw=true" alt="Chatbot" style="width:150px;height:120px;object-fit:cover;" />
 </div>
 
-           <div id="assistant-embed" style="position:fixed;bottom:20px;right:20px;width:550px;height:630px;border:1px solid #ccc;border-radius:10px;display:none;">
+           <div id="assistant-embed" style="position:fixed;bottom:20px;right:20px;width:750px;height:530px;border:1px solid #ccc;border-radius:10px;display:none;">
               <div style="display:flex;justify-content:space-between;align-items:center;padding:10px;background-color:#f0f0f0;border-top-left-radius:10px;border-top-right-radius:10px;">
                 <h4 style="margin:0;font-size:16px;">${assistantName} Assistant</h4>
                 <button id="minimize-button" style="border:none;background:transparent;cursor:pointer;font-size:20px;">
